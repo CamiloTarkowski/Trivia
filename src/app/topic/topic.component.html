@@ -1,0 +1,60 @@
+<body>
+    <div *ngIf="questions.length == 0" class="container">
+        <h1>(NO HAY PREGUNTAS PARA MOSTRAR)</h1>
+    </div>
+
+    <div *ngIf="i < questions.length" class="container">
+
+        <div class="container title__box">
+            <h1>PREGUNTA {{i+1}}</h1>
+        </div>
+        <div class="container question__box">
+            <h1>{{questions[i].description}}</h1>
+        </div>
+
+        <div class="alternative__box d-grid gap-2">
+            <button type="button" class="btn btn-outline-warning" (click)="checkResponse('a')">
+                <h1>A) {{questions[i].a}}</h1>
+            </button>
+        </div>
+
+        <div class="alternative__box d-grid gap-2">
+            <button type="button" class="btn btn-outline-warning" (click)="checkResponse('b')">
+                <h1>B) {{questions[i].b}}</h1>
+            </button>
+        </div>
+
+        <div class="alternative__box d-grid gap-2">
+
+            <button type="button" class="btn btn-outline-warning" (click)="checkResponse('c')">
+                <h1>C) {{questions[i].c}}</h1>
+            </button>
+        </div>
+        <div class="alternative__box d-grid gap-2">
+
+            <button type="button" class="btn btn-outline-warning" (click)="checkResponse('d')">
+                <h1>D) {{questions[i].d}}</h1>
+            </button>
+        </div>
+
+        <h1>PUNTAJE: {{score}}</h1>
+
+    </div>
+    <div *ngIf="i >= questions.length && i > 0">
+        <h1>RESUMEN</h1>
+        <div *ngFor="let question of questions; let i = index">
+            <div>{{i+1}}) {{question.description}} </div>
+            <div *ngIf="question.res != saveResponses[i]">R. Correcta: {{question.res}} Tu respuesta:
+                {{saveResponses[i]}} ❌</div>
+            <div *ngIf="question.res == saveResponses[i]">{{saveResponses[i]}} ✔️</div>
+
+        </div>
+        <h1>PUNTAJE FINAL: {{score}} </h1>
+    </div>
+
+
+    <button>
+        <a href="/">Volver</a>
+    </button>
+
+</body>

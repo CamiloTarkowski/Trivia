@@ -1,0 +1,35 @@
+body{
+    background: rgb(38, 25, 59);
+    color: rgb(190, 190, 190);
+    margin: 0 auto;
+}
+
+.container{
+    margin: 0 auto;
+    max-width: 1000px;
+    
+}
+
+.alternative__box{
+    margin-bottom: 10px;
+}
+
+.question__box{
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border-color: #d4d4d4;
+    border: solid; 
+    border-width: 2px;
+    text-align: center;  
+}
+
+.title__box{
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+}
+
+.text-left{
+    text-align: left;
+}

@@ -1,0 +1,6 @@
+<h1>Elige el tipo de trivia</h1>
+<div *ngFor="let topic of topics">
+    <h3>
+        <a href="topic/{{ topic.id }}">{{topic.name}}</a>
+    </h3>
+</div>
